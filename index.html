@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet Addinteli</title>
+    <link rel="stylesheet" href="/style_registros.css">
+</head>
+<body>
+
+<header>
+    <img src="/Logo_Addinteli_2.png" alt="Logo Addinteli" class="logo"></a>
+</header>
+
+<main>
+    <div class="container">
+
+        <h1>Plantillas IRM</h1>
+
+        <!-- =========================
+             BLOQUE BOTONES TIPO
+        ========================== -->
+        <div class="bloque-tipos">
+            <button class="btn-tipo" data-tipo="callcenter">Call Center</button>
+            <button class="btn-tipo" data-tipo="tickets">Tickets</button>
+            <button class="btn-tipo" data-tipo="correo">Correo</button>
+            <button class="btn-tipo" data-tipo="escalamiento">Escalamiento</button>
+        </div>
+
+        <!-- =========================
+            BLOQUE CATEGORIAS
+        ========================= -->
+        <div id="bloqueCategorias" class="bloque-secundario oculto">
+            <h3>Categoría</h3>
+            <div id="contenedorCategorias" class="grid-botones"></div>
+        </div>
+
+        <!-- =========================
+            BLOQUE PLANTILLAS
+        ========================= -->
+        <div id="bloquePlantillas" class="bloque-secundario oculto">
+            <h3>Plantilla</h3>
+            <div id="contenedorPlantillas" class="grid-botones"></div>
+        </div>
+
+        <div class="separador-seccion"></div>
+        <label class="label-editor">Contenido de la plantilla:</label>
+        <div id="editorPlantilla" contenteditable="true"></div>
+
+        <!-- =========================
+             BOTONES ACCIÓN
+        ========================== -->
+        <div class="botones-container">
+            <button id="limpiarBtn">Limpiar</button>
+            <button id="copiarBtn">Copiar Plantilla</button>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Intranet Corporativa. Todos los derechos reservados.</p>
+</footer>
+
+<!-- =========================
+     INICIALIZADOR GLOBAL SEGURO
+========================= -->
+<script>
+window.PLANTILLAS = window.PLANTILLAS || {};
+window.PLANTILLAS.callcenter = window.PLANTILLAS.callcenter || {};
+window.PLANTILLAS.correo = window.PLANTILLAS.correo || {};
+window.PLANTILLAS.tickets = window.PLANTILLAS.tickets || {};
+window.PLANTILLAS.escalamiento = window.PLANTILLAS.escalamiento || {};
+</script>
+
+<!-- =========================
+     CALL CENTER
+========================= -->
+<script src="/Plantillas/Call Center/Callback.js"></script>
+<script src="/Plantillas/Call Center/Informacion.js"></script>
+<script src="/Plantillas/Correo/Desactivacion.js"></script>
+<script src="/Plantillas/Call Center/Fallas de Voz.js"></script>
+<script src="/Plantillas/Call Center/Fallas de Navegacion.js"></script>
+<script src="/Plantillas/Call Center/Fallas en SMS.js"></script>
+<script src="/Plantillas/Call Center/Falla Total Voz y Datos.js"></script>
+<script src="/Plantillas/Call Center/Migracion Interna.js"></script>
+<script src="/Plantillas/Call Center/Recargas.js"></script>
+<script src="/Plantillas/Call Center/Reactivacion y Reanudacion.js"></script>
+<script src="/Plantillas/Call Center/Seguimiento a correo.js"></script>
+<script src="/Plantillas/Call Center/Otros.js"></script>
+
+<!-- =========================
+     TICKETS
+========================= -->
+<script src="/Plantillas/Tickets/Activacion.js"></script>
+<script src="/Plantillas/Tickets/Compra de adicionales.js"></script>
+<script src="/Plantillas/Tickets/Cambio de zona.js"></script>
+<script src="/Plantillas/Tickets/Portabilidad.js"></script>
+<script src="/Plantillas/Tickets/Renovacion.js"></script>
+<script src="/Plantillas/Tickets/Reactivacion.js"></script>
+<script src="/Plantillas/Tickets/Reactivacion y Renovacion.js"></script>
+<script src="/Plantillas/Tickets/Suspension.js"></script>
+<script src="/Plantillas/Tickets/SIM Swap.js"></script>
+<script src="/Plantillas/Tickets/Otros.js"></script>
+
+<!-- =========================
+     CORREO
+========================= -->
+
+<script src="/Plantillas/Correo/Activacion de Línea.js"></script>
+<script src="/Plantillas/Correo/Atencion a Ticket.js"></script>
+<script src="/Plantillas/Correo/Cambio de Numero.js"></script>
+<script src="/Plantillas/Correo/Portabilidad.js"></script>
+<script src="/Plantillas/Correo/Procesos NWM.js"></script>
+<script src="/Plantillas/Correo/Reactivacion.js"></script>
+<script src="/Plantillas/Correo/Seguimiento a correo.js"></script>
+<script src="/Plantillas/Correo/SIM Swap.js"></script>
+<script src="/Plantillas/Correo/Suspension.js"></script>
+<script src="/Plantillas/Correo/Otros.js"></script>
+
+<!-- =========================
+     ESCALAMIENTO
+========================= -->
+
+<script src="./Plantillas/Escalamiento/Escalamiento.js"></script>
+
+<!-- =========================
+     SCRIPT PRINCIPAL
+========================= -->
+
+<script src="/script.js"></script>
+
+<!-- =========================
+     MENÚ HAMBURGUESA
+========================= -->
+<script>
+document.getElementById('menu-toggle').addEventListener('click', function(e){
+    e.stopPropagation();
+    document.getElementById('menu-desplegable').classList.toggle('mostrar');
+});
+
+document.addEventListener('click', function(e){
+    const menu = document.getElementById('menu-desplegable');
+    const button = document.getElementById('menu-toggle');
+    if(!menu.contains(e.target) && !button.contains(e.target)){
+        menu.classList.remove('mostrar');
+    }
+});
+</script>
+
+</body>
+</html>

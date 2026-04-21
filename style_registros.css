@@ -1,0 +1,351 @@
+/* =========================================
+   🎨 VARIABLES GLOBALES
+========================================= */
+:root {
+    --azul-oscuro: #0C2545;
+    --azul-hover: #081A30;
+    --azul-medio: #174C85;
+    --azul-activo: #2366C4;
+
+    --gris-fondo: #F4F7FA;
+    --gris-borde: #D6DFE8;
+
+    --blanco: #ffffff;
+    --negro: #000000;
+
+    --verde: #2ecc71;
+    --rojo: #e74c3c;
+    --amarillo: #f1c40f;
+
+    --sombra-suave: 0 4px 10px rgba(0,0,0,0.15);
+    --sombra-hover: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================
+   🔄 RESET GLOBAL
+========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   🧍 BODY GLOBAL
+========================================= */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(/FondodepantallaP2.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--negro);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   🧢 HEADER
+========================================= */
+header,
+.header {
+    position: relative;
+    padding: 20px;
+    min-height: 110px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 70px;
+    z-index: 1001;
+}
+
+
+/* =========================================
+   🍔 MENÚ HAMBURGUESA
+========================================= */
+.menu-hamburguesa {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+#menu-toggle {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    font-size: 22px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.25s ease;
+    box-shadow: var(--sombra-suave);
+}
+
+#menu-toggle:hover {
+    background-color: var(--azul-hover);
+    box-shadow: var(--sombra-hover);
+}
+
+
+/* =========================================
+   📂 MENU DESPLEGABLE
+========================================= */
+.menu-desplegable {
+    list-style: none;
+    background: rgba(255,255,255,0.96);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-hover);
+    display: none;
+    z-index: 1002;
+}
+
+.menu-desplegable.mostrar {
+    display: block;
+}
+
+.menu-desplegable li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--azul-activo);
+    font-size: 14px;
+}
+
+.menu-desplegable li a:hover {
+    background: var(--gris-fondo);
+}
+
+
+/* =========================================
+   📦 MAIN
+========================================= */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =========================================
+   📐 CONTENEDOR GLOBAL
+========================================= */
+.container {
+    width: 80%;
+    max-width: 950px;
+    background: rgba(255,255,255,0.97);
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: var(--sombra-hover);
+}
+
+
+/* =========================================
+   🏷️ TITULOS
+========================================= */
+h1 {
+    color: var(--azul-oscuro);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2, h3 {
+    color: var(--azul-oscuro);
+}
+
+
+/* =========================================
+   🔘 BOTONES GENERALES
+========================================= */
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.25s ease;
+    box-shadow: var(--sombra-suave);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-hover);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   🧩 UTILIDADES
+========================================= */
+.oculto {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* =========================================
+   📘 SECCIÓN: PLANTILLAS
+========================================= */
+
+/* BOTONES PRINCIPALES */
+.bloque-tipos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.btn-tipo {
+    padding: 14px;
+    border-radius: 10px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.btn-tipo:hover {
+    background-color: var(--azul-hover);
+}
+
+.btn-tipo.activo {
+    background-color: var(--azul-activo);
+    box-shadow: 0 0 0 2px rgba(35,102,196,0.3);
+}
+
+
+/* GRID SECUNDARIO */
+.grid-botones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.grid-botones button {
+    background-color: var(--azul-medio);
+    color: var(--blanco);
+    font-size: 14px;
+    text-align: left;
+}
+
+.grid-botones button:hover {
+    background-color: var(--azul-oscuro);
+}
+
+.grid-botones button.activo {
+    background-color: var(--azul-activo);
+}
+
+
+/* BLOQUES */
+.bloque-secundario {
+    margin-top: 25px;
+}
+
+#bloquePlantillas {
+    margin-bottom: 35px;
+}
+
+
+/* EDITOR */
+#editorPlantilla {
+    margin-top: 25px;
+    min-height: 220px;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid var(--gris-borde);
+    background-color: var(--gris-fondo);
+    line-height: 1.5;
+}
+
+#editorPlantilla:focus {
+    outline: none;
+    border: 1px solid var(--azul-activo);
+    box-shadow: 0 0 0 3px rgba(44,123,229,0.2);
+}
+
+
+/* BOTONES ACCIÓN */
+.botones-container {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.botones-container button {
+    flex: 1;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.botones-container button:hover {
+    background-color: var(--azul-hover);
+}
+
+
+/* SEPARADORES */
+.separador-seccion {
+    height: 1px;
+    background-color: var(--gris-borde);
+    margin: 35px 0 20px;
+}
+
+
+/* =========================================
+   🧾 FOOTER
+========================================= */
+footer,
+.footer {
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--negro);
+}
+
+
+/* =========================================
+   📱 RESPONSIVE
+========================================= */
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .bloque-tipos,
+    .grid-botones {
+        grid-template-columns: 1fr;
+    }
+
+    .botones-container {
+        flex-direction: column;
+    }
+
+    #menu-toggle {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
